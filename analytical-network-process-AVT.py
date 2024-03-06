@@ -133,33 +133,35 @@ st.set_page_config(layout="wide")
 
 def app():
     st.title('Analytical Network Process (ANP) Application')
+
+    col1, col2=st.columns(2)
+
+    with col1:
+        diagram_title = st.text_input('Diagram Title', 'Network Process Diagram')
+        main_criterion_input = st.text_input('Enter the main criterion for the network analysis', 'Main Criterion')
+        criteria_input = st.text_input('Enter criteria separated by comma', 'Criterion 1, Criterion 2')
+        alternatives_input = st.text_input('Enter alternatives separated by comma', 'Alternative 1, Alternative 2')
     
-    diagram_title = st.text_input('Diagram Title', 'Network Process Diagram')
-    main_criterion_input = st.text_input('Enter the main criterion for the network analysis', 'Main Criterion')
-    criteria_input = st.text_input('Enter criteria separated by comma', 'Criterion 1, Criterion 2')
-    alternatives_input = st.text_input('Enter alternatives separated by comma', 'Alternative 1, Alternative 2')
+        main_criteria = [a.strip() for a in main_criterion_input.split(',')]  # Selv om vi forventer kun én verdi her
+        criteria = [c.strip() for c in criteria_input.split(',')]
+        alternatives = [a.strip() for a in alternatives_input.split(',')]
+        main_criteria_node_list= main_criteria
+        criteria_node_list = criteria
+        alternative_node_list = alternatives
     
-    main_criteria = [a.strip() for a in main_criterion_input.split(',')]  # Selv om vi forventer kun én verdi her
-    criteria = [c.strip() for c in criteria_input.split(',')]
-    alternatives = [a.strip() for a in alternatives_input.split(',')]
-    main_criteria_node_list= main_criteria
-    criteria_node_list = criteria
-    alternative_node_list = alternatives
+        node_list=main_criteria_node_list+criteria_node_list+alternative_node_list
     
-    node_list=main_criteria_node_list+criteria_node_list+alternative_node_list
+        relationships, weights = input_network_relationships(node_list)
     
-    relationships, weights = input_network_relationships(node_list)
-    
-    if st.button('Create Supermatrix and Analyze'):
-        supermatrix = create_supermatrix(node_list, relationships, weights)
-        normalized_matrix = normalize_supermatrix(supermatrix)
-        priority_vector = calculate_priority_vector(normalized_matrix)
-        display_consolidated_weights(priority_vector, node_list)
+        if st.button('Create Supermatrix and Analyze'):
+            supermatrix = create_supermatrix(node_list, relationships, weights)
+            normalized_matrix = normalize_supermatrix(supermatrix)
+            priority_vector = calculate_priority_vector(normalized_matrix)
+            display_consolidated_weights(priority_vector, node_list)
         
-            
+    with col2:        
     draw_network_diagram(diagram_title, main_criteria_node_list, criteria_node_list, alternative_node_list, relationships, weights)
     
-    st.write(normalized_matrix)
     
 if __name__ == '__main__':
     app()
