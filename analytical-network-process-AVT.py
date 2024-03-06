@@ -127,7 +127,7 @@ def draw_network_diagram(diagram_title, main_criteria_node_list, criteria_node_l
 
     plt.title(diagram_title)
     plt.axis('off')
-    plt.subplots_adjust(left=0.1, right=0.9, top=0.9, bottom=0.1)
+    plt.subplots_adjust(left=0.05, right=0.95, top=0.95, bottom=0.05)
     st.pyplot(fig)
 
 st.set_page_config(layout="wide")
