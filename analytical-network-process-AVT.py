@@ -103,7 +103,7 @@ def draw_network_diagram(diagram_title, main_criteria_node_list, criteria_node_l
     for index, node in enumerate(alternative_node_list):
         pos[node] = np.array([index * alternative_spacing, alternative_heights[index % len(alternative_heights)]])
 
-    fig, ax = plt.subplots(figsize=(10,6))
+    fig, ax = plt.subplots(figsize=(18,12))
     
     node_size_main = 2000
     node_size_network = 1800
