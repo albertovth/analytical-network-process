@@ -81,7 +81,7 @@ def draw_network_diagram(diagram_title, main_criteria_node_list, criteria_node_l
 
     pos = {}
     
-    criteria_spacing = 1
+    criteria_spacing = 0.5
 
     total_width = (len(criteria_node_list) - 1) * criteria_spacing
    
@@ -94,12 +94,12 @@ def draw_network_diagram(diagram_title, main_criteria_node_list, criteria_node_l
        pos[node] = np.array([main_criteria_x_start + index * main_criteria_spacing, 2])  
 
     criteria_heights = [1.5, 1.2, 1.5]  
-    criteria_spacing = 1*(max(len(main_criteria_node_list), len(alternative_node_list)) / max(1, len(criteria_node_list)))
+    criteria_spacing = 0.5*(max(len(main_criteria_node_list), len(alternative_node_list)) / max(1, len(criteria_node_list)))
     for index, node in enumerate(criteria_node_list):
         pos[node] = np.array([index * criteria_spacing, criteria_heights[index % len(criteria_heights)]])
 
     alternative_heights = [0.5, 0.2, 0.5]  
-    alternative_spacing = 1*(max(len(main_criteria_node_list), len(criteria_node_list)) / max(1, len(alternative_node_list)))
+    alternative_spacing = 0.5*(max(len(main_criteria_node_list), len(criteria_node_list)) / max(1, len(alternative_node_list)))
     for index, node in enumerate(alternative_node_list):
         pos[node] = np.array([index * alternative_spacing, alternative_heights[index % len(alternative_heights)]])
 
