@@ -129,8 +129,6 @@ def draw_network_diagram(diagram_title, main_criteria_node_list, criteria_node_l
     plt.axis('off')
     st.pyplot(fig)
 
-st.set_page_config(layout="wide")
-
 def app():
     st.title('Analytical Network Process (ANP) Application')
     
