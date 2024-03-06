@@ -157,11 +157,19 @@ def app():
             supermatrix = create_supermatrix(node_list, relationships, weights)
             normalized_matrix = normalize_supermatrix(supermatrix)
             priority_vector = calculate_priority_vector(normalized_matrix)
-            display_consolidated_weights(priority_vector, node_list)
+            
         
     with col2:        
         draw_network_diagram(diagram_title, main_criteria_node_list, criteria_node_list, alternative_node_list, relationships, weights)
-    
+        st.markdown('''
+        ### Network Consolidated Weights
+        ''')
+        display_consolidated_weights(priority_vector, node_list)
+        st.markdown('''
+        ### Normalized Supermatrix
+        ''')
+        st.write(normalized_matrix)
+        
     
 if __name__ == '__main__':
     app()
