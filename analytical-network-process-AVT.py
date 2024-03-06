@@ -103,7 +103,7 @@ def draw_network_diagram(diagram_title, main_criteria_node_list, criteria_node_l
     for index, node in enumerate(alternative_node_list):
         pos[node] = np.array([index * alternative_spacing, alternative_heights[index % len(alternative_heights)]])
 
-    fig, ax = plt.subplots(figsize=(8, 4))
+    fig, ax = plt.subplots(figsize=(24, 20))
     
     node_size_main = 2000
     node_size_network = 1800
@@ -128,6 +128,8 @@ def draw_network_diagram(diagram_title, main_criteria_node_list, criteria_node_l
     plt.title(diagram_title)
     plt.axis('off')
     st.pyplot(fig)
+
+st.set_page_config(layout="wide")
 
 def app():
     st.title('Analytical Network Process (ANP) Application')
