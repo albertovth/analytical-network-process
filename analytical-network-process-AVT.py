@@ -164,11 +164,10 @@ def app():
             ### Network Consolidated Weights
             ''')
             display_consolidated_weights(priority_vector, node_list)
-            st.markdown('''
-            ### Normalized Supermatrix
-            ''')
-            st.write(normalized_matrix)
-        
+            normalized_matrix_with_names = normalized_matrix.copy()
+            normalized_matrix_with_names = pd.DataFrame(normalized_matrix_with_names, index=node_list, columns=node_list)
+            st.markdown('### Normalized Supermatrix')
+            st.write(normalized_matrix_with_names)       
     
 if __name__ == '__main__':
     app()
