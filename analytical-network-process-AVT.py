@@ -160,7 +160,7 @@ def app():
             display_consolidated_weights(priority_vector, node_list)
         
     with col2:        
-    draw_network_diagram(diagram_title, main_criteria_node_list, criteria_node_list, alternative_node_list, relationships, weights)
+        draw_network_diagram(diagram_title, main_criteria_node_list, criteria_node_list, alternative_node_list, relationships, weights)
     
     
 if __name__ == '__main__':
