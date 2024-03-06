@@ -130,7 +130,7 @@ def draw_network_diagram(diagram_title, main_criteria_node_list, criteria_node_l
     fig.savefig('temp_fig.png')
     st.image('temp_fig.png')
 
-
+st.set_page_config(layout="wide")
 
 def app():
     st.title('Analytical Network Process (ANP) Application')
