@@ -127,7 +127,7 @@ def draw_network_diagram(diagram_title, main_criteria_node_list, criteria_node_l
 
     plt.title(diagram_title)
     plt.axis('off')
-    fig.savefig('temp_fig.png', bbox_inches='tight',pad_inches=0.5)
+    fig.savefig('temp_fig.png')
     st.image('temp_fig.png')
 
 st.set_page_config(layout="wide")
