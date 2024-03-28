@@ -142,7 +142,7 @@ def app():
         criteria_input = st.text_input('Enter criteria separated by comma', 'Criterion 1, Criterion 2')
         alternatives_input = st.text_input('Enter alternatives separated by comma', 'Alternative 1, Alternative 2')
     
-        main_criteria = [a.strip() for a in main_criterion_input.split(',')]  # Selv om vi forventer kun én verdi her
+        main_criteria = [a.strip() for a in main_criterion_input.split(',')] 
         criteria = [c.strip() for c in criteria_input.split(',')]
         alternatives = [a.strip() for a in alternatives_input.split(',')]
         main_criteria_node_list= main_criteria
