@@ -6,11 +6,11 @@ Created on Mon Mar  4 19:05:57 2024
 @author: albertovth
 """
 ### 
-## Development of this Streamlit application for Analytical Network Process (ANP) was led by Alberto Valiente Thoresen, 
-## with conceptual and troubleshooting support provided by OpenAI's ChatGPT 4.0. The ideas
-## and initial development efforts were initiated by Alberto Valiente Thoresen, with ChatGPT 4.0
-## assisting in refining and troubleshooting specific issues. This collaboration
-## enabled the development of a dynamic and interactive application. 
+## The development of this Streamlit application for Analytical Network Process (ANP) was led by Alberto Valiente Thoresen. 
+## Conceptual and troubleshooting support was provided by OpenAI's ChatGPT 4.0. The ideas
+## and initial development were initiated by Alberto Valiente Thoresen, with ChatGPT 4.0
+## helping to refine and troubleshoot specific issues. This collaboration
+## made possible the development of the dynamic and interactive application for ANP. 
 ###
 
 
