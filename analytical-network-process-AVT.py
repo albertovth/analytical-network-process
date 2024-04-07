@@ -141,10 +141,10 @@ def app():
     col1, col2=st.columns(2)
 
     with col1:
-        diagram_title = st.text_input('Diagram Title', 'Network Process Diagram')
-        main_criterion_input = st.text_input('Enter the main criterion for the network analysis', 'Main Criterion')
-        criteria_input = st.text_input('Enter criteria separated by comma', 'Criterion 1, Criterion 2')
-        alternatives_input = st.text_input('Enter alternatives separated by comma', 'Alternative 1, Alternative 2')
+        diagram_title = st.text_input('Title for your network diagram', 'Network Process Diagram')
+        main_criterion_input = st.text_input('Register the main criterion for the ANP', 'Main Criterion')
+        criteria_input = st.text_input('Register the criteria for the ANP, separated by commas', 'Criterion 1, Criterion 2')
+        alternatives_input = st.text_input('Register the alternatives for the ANP, separated by commas', 'Alternative 1, Alternative 2')
     
         main_criteria = [a.strip() for a in main_criterion_input.split(',')] 
         criteria = [c.strip() for c in criteria_input.split(',')]
